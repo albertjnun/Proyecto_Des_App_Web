@@ -43,7 +43,7 @@ Inherits="Proyecto_Des_App_Web.login" %>
         document
           .querySelector("#button_acceder")
           .addEventListener("click", function () {
-            window.location.href = "index.html";
+            window.location.href = "clientes.aspx";
           });
       });
     </script>

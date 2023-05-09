@@ -1,0 +1,266 @@
+﻿* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-bottom: 80px;
+  margin: 1em;
+}
+
+.main-head {
+  text-align: center;
+}
+/* Barra de navegación */
+nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  background-color: #212529;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: #dfdedf;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: white;
+  background-color: #1c1f22;
+}
+
+nav .dashboard {
+  font-size: larger;
+  font-weight: bold;
+}
+
+nav .nav-right {
+  float: right;
+}
+
+.burger-button-img {
+  width: 20px;
+  height: 20px;
+}
+
+.hide {
+  display: none;
+}
+/* Contenido pagina main -- Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: 70% auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.grid-container .item-left h3 {
+  font-size: 30px;
+}
+
+.grid-container .item-left table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grid-container .item-left table td,
+.grid-container .item-left table th {
+  border-bottom: 1px solid #b3b2b2;
+}
+
+.grid-container .item-left table th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.grid-container .item-left table th.center-align {
+  text-align: center;
+}
+
+.grid-container .item-left table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.grid-container .item-left table td.center-align {
+  text-align: center;
+}
+
+.grid-container .item-left table button {
+  background: none;
+  border: none;
+}
+/* Imagenes para botones */
+.button-img-edit,
+.button-img-delete {
+  width: 20px;
+  height: 20px;
+}
+/* Tabla Agenda */
+.grid-container .item-right table {
+  border: 1px solid #b3b2b2;
+  border-spacing: 0;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.grid-container .item-right h3 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.grid-container .item-right table {
+  width: 100%;
+}
+
+.grid-container .item-right table td {
+  padding: 5px 10px 5px 10px;
+  border-bottom: 1px solid #b3b2b2;
+}
+
+.grid-container .item-right table tr:last-child td {
+  border-bottom: none;
+}
+/* Tabla clientes en pagina clientes.html */
+.full-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.full-table th,
+.full-table td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b3b2b2;
+}
+
+.full-table button {
+  background: none;
+  border: none;
+}
+/* Footer */
+footer {
+  background-color: #212529;
+  color: #dfdedf;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+}
+/* Estilos pantalla pequeña (sitio web movil) */
+@media (max-width: 768px) {
+  main {
+    margin-bottom: 0px;
+  }
+  /* Barra de navegacion */
+  nav {
+    height: auto;
+  }
+
+  nav ul {
+    display: block;
+    height: auto;
+    text-align: center;
+  }
+
+  nav li {
+    float: none;
+  }
+
+  nav li a {
+    text-align: left;
+  }
+
+  nav .nav-right {
+    float: none;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    float: right;
+  }
+
+  .burger-button {
+    font-size: 0;
+    background-color: #212529;
+    padding: 5px;
+    border: none;
+  }
+  /* Animación barra de navegación */
+  .menu-active {
+    animation: menu-icon-active 0.3s ease-out forwards;
+  }
+
+  @keyframes menu-icon-active {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .menu-inactive {
+    animation: menu-icon-inactive 0.3s ease-out forwards;
+  }
+
+  @keyframes menu-icon-inactive {
+    from {
+      transform: rotate(-90deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .nav-button div {
+    padding: 0;
+  }
+  /* Grid pagina */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+
+  .grid-container-child {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+  /* Footer */
+  footer {
+    position: relative;
+    margin-top: 80px;
+  }
+}
