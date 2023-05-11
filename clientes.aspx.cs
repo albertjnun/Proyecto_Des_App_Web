@@ -16,6 +16,11 @@ namespace Proyecto_Des_App_Web
         public List<string> phoneList = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Checar si usuario esta logeado para acceso
+            if (Session["LoggedIn"] == null || !(bool)Session["LoggedIn"])
+            {
+                Response.Redirect("login.aspx");
+            }
 
             string Nombre, Telefono;
 

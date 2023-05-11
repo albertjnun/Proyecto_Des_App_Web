@@ -19,6 +19,11 @@
     box-sizing: border-box;
 }
 
+.login-message {
+    text-align: center;
+    color: red;
+}
+
 input {
     display: block;
     margin: 0 auto;

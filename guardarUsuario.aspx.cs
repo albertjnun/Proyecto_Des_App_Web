@@ -1,15 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 namespace Proyecto_Des_App_Web
 {
-    public partial class login : System.Web.UI.Page
+    public partial class guardarUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +24,7 @@ namespace Proyecto_Des_App_Web
                 password: password,
                 salt: saltBytes,
                 prf: KeyDerivationPrf.HMACSHA512,
-                iterationCount: 10000,
+                iterationCount: 600000,
                 numBytesRequested: 256 / 8
             );
 
