@@ -91,6 +91,7 @@
     <Content Include="guardarUsuario.aspx" />
     <Content Include="login.aspx" />
     <Content Include="registro.aspx" />
+    <Content Include="scripts\login.js" />
     <Content Include="scripts\script.js" />
     <Content Include="styles\login.css" />
     <Content Include="styles\main.css" />
