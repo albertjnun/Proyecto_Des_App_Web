@@ -52,7 +52,7 @@ input {
     padding: 8px 30px;
     border-radius: 5px;
     border: none;
-    background: #6c757d;
+    background: #303437;
     box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
     color: #dfdedf;
     user-select: none;
@@ -63,7 +63,7 @@ input {
 
     .btn:hover {
         color: #f5f5f5;
-        background: #383839;
+        background: #17191b;
     }
 
 .olvido {
