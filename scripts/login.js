@@ -20,7 +20,7 @@
                 sendRequest(userVal, passwordVal);
             }
         });
-    function sendRequest(user, password) {
+    const sendRequest = function(user, password) {
         fetch("checarUsuario.aspx", {
             method: "POST",
             headers: {
