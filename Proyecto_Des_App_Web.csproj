@@ -89,6 +89,7 @@
     <Content Include="checarUsuario.aspx" />
     <Content Include="clientes.aspx" />
     <Content Include="guardarUsuario.aspx" />
+    <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="scripts\login.js" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="guardarUsuario.aspx.designer.cs">
       <DependentUpon>guardarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

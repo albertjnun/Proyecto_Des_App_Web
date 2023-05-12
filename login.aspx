@@ -9,7 +9,7 @@ Inherits="Proyecto_Des_App_Web.login" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="styles/login.css" />
-     <script src="scripts/login.js"></script>
+     <script src="scripts/login.js" defer></script>
   </head>
   <body>
     <header>

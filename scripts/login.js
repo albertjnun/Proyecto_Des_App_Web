@@ -25,7 +25,7 @@
             responseArray = response.split(',');
             console.log(responseArray);
             if (responseArray[0] === "True" && responseArray[1] === "True") {
-                window.location.href = "clientes.aspx";
+                window.location.href = "index.aspx";
             }
             else if (responseArray[0] === "False") {
                 message.textContent = "Usuario no existe";
