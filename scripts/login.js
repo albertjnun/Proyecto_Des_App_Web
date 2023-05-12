@@ -1,14 +1,19 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     let access = false;
+    let message = document.querySelector(".login-message");
     document
         .querySelector("#button_acceder")
         .addEventListener("click", function () {
             userVal = document.querySelector("#login_email").value;
             passwordVal = document.querySelector("#login_pass").value;
-            sendRequest(userVal, passwordVal);
+            if (userVal === "" || passwordVal === "") {
+                message.textContent = "Se requieren todos los campos";
+            }
+            else {
+                sendRequest(userVal, passwordVal);
+            }
         });
     function sendRequest(user, password) {
-        let message = document.querySelector(".login-message");
         fetch("checarUsuario.aspx", {
             method: "POST",
             headers: {
@@ -23,11 +28,11 @@
                 window.location.href = "clientes.aspx";
             }
             else if (responseArray[0] === "False") {
-                message.textContent = "User does not exist";
+                message.textContent = "Usuario no existe";
             }
             else {
                 document.querySelector("#login_pass").value = "";
-                message.textContent = "Incorrect password";
+                message.textContent = "Contraseña incorrecta";
             }
         }).catch(error => {
             console.log(error);

@@ -33,9 +33,9 @@ Inherits="Proyecto_Des_App_Web.login" %>
         />
         <button type="button" id="button_acceder" class="btn">Acceder</button>
         <p class="olvido">
-          Olvidó su contraseña?
+          <%--Olvidó su contraseña?--%>Página temporal: 
           <a href="registro.aspx" class="cambiar"
-            ><b>Cambiar contraseña</b></a
+            ><%--<b>Cambiar contraseña</b>--%><b>Registro usuario</b></a
           >
         </p>
       </form>
