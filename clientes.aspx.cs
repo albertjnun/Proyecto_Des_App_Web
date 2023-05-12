@@ -43,7 +43,6 @@ namespace Proyecto_Des_App_Web
                     Telefono = dr[1].ToString();
                     phoneList.Add(Telefono);
 
-
                 }
 
                 conn.Close();
@@ -52,6 +51,10 @@ namespace Proyecto_Des_App_Web
         }
         public string CreateClientesTable(int index)
         {
+            if(nameList.Count == 0)
+            {
+                return "<p>No hay clientes que mostrar</p>";
+            }
             StringBuilder tablaClientes = new StringBuilder();
             int maxIndex = index + 20;
             while (index < nameList.Count)

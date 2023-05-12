@@ -14,9 +14,9 @@
       <nav class="nav-horizontal">
         <ul>
           <li class="dashboard">
-            <a href="#">Dashboard</a>
+            <a href="index.aspx">Dashboard</a>
           </li>
-          <li class="nav-item hide"><a href="clientes_2.html">Clientes</a></li>
+          <li class="nav-item hide"><a href="clientes.aspx">Clientes</a></li>
           <li class="nav-item hide"><a href="#">Expedientes</a></li>
           <li class="nav-item nav-right hide"><a href="#">Cuenta</a></li>
           <li class="nav-button">
