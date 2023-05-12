@@ -13,10 +13,10 @@ Inherits="Proyecto_Des_App_Web.login" %>
   </head>
   <body>
     <header>
-      <h1 class="header_main">Despacho Jurídico César Pérez Hernández</h1>
+      <h1 class="header-main">Despacho Jurídico César Pérez Hernández</h1>
     </header>
     <main>
-      <form class="input_box" method="post">
+      <form class="input-box" method="post">
          <p class="login-message"></p>
         <input
           type="text"
@@ -31,7 +31,8 @@ Inherits="Proyecto_Des_App_Web.login" %>
           name="login_pass"
           placeholder="Contraseña"
         />
-        <button type="button" id="button_acceder" class="btn">Acceder</button>
+        <input type="submit" id="button_acceder" class="btn" value="Acceder" />
+        <%--<button type="button" id="button_acceder" class="btn">Acceder</button>--%>
         <p class="olvido">
           <%--Olvidó su contraseña?--%>Página temporal: 
           <a href="registro.aspx" class="cambiar"

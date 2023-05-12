@@ -4,13 +4,13 @@
     color: #212529;
 }
 
-.header_main {
+.header-main {
     text-align: center;
     padding-top: 8em;
     font-weight: 500;
 }
 
-.input_box {
+.input-box {
     margin: 0 auto;
     width: 400px;
     padding: 30px;
@@ -44,6 +44,7 @@ input {
 }
 
 .btn {
+    width: 30%;
     margin: 0 auto;
     margin-top: 1em;
     display: flex;

@@ -1,9 +1,16 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+    //Declaración de variables
     let access = false;
-    let message = document.querySelector(".login-message");
-    document
-        .querySelector("#button_acceder")
-        .addEventListener("click", function () {
+    const message = document.querySelector(".login-message");
+    const form = document.querySelector(".input-box");
+    const buttonAcceder = document.querySelector("#button_acceder");
+    //Asignar tecla enter al evento click del boton
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        buttonAcceder.click();
+    })
+    //Evento click del boton
+    buttonAcceder.addEventListener("click", function (event) {
             userVal = document.querySelector("#login_email").value;
             passwordVal = document.querySelector("#login_pass").value;
             if (userVal === "" || passwordVal === "") {
@@ -28,6 +35,7 @@
                 window.location.href = "index.aspx";
             }
             else if (responseArray[0] === "False") {
+                document.querySelector("#login_email").value = "";
                 message.textContent = "Usuario no existe";
             }
             else {
