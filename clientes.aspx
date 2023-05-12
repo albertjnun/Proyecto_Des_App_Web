@@ -34,7 +34,7 @@
     <main>
       <h1 class="main-head">Clientes</h1>
       <table class="full-table">
-        <tr>
+        <tr class="table-header-row">
           <th>Nombre</th>
           <th>Teléfono</th>
           <th class="center-align">Modificar</th>
@@ -42,6 +42,55 @@
         </tr>
         <%= CreateClientesTable(0) %>
       </table>
+      <a class="anchor-add">Añadir cliente</a>
+        <dialog id="vista-dialog">
+            <p>Vista cliente</p>
+            <table>
+              <tr>
+                <td>Nombre:</td>
+                <td>
+                  <input id="dialog_nombre" type="text"  readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>Teléfono:</td>
+                <td>
+                  <input id="dialog_telefono" type="text" readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>Dirección:</td>
+                <td>
+                  <input id="dialog_direccion" type="text" readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>Correo:</td>
+                <td>
+                  <input id="dialog_email" type="text" readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>Fecha Nacimiento:</td>
+                <td>
+                  <input id="dialog_fecha" type="text" readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>No. Identificación:</td>
+                <td>
+                  <input id="dialog_id" type="text" readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>Estado Civil:</td>
+                <td>
+                  <input id="dialog_estado_civil" type="text" readonly/>
+                </td>
+              </tr>
+            </table>
+            <button id="close-dialog-btn">Close</button>
+        </dialog>
     </main>
 
     <!-- <footer>

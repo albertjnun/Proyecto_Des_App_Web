@@ -163,6 +163,15 @@ nav .nav-right {
   background: none;
   border: none;
 }
+/* Anchor */
+.anchor-add {
+    text-align: center;
+    display:block;
+    padding: 1em;
+}
+.anchor-add:hover{
+    text-decoration:underline;
+}
 /* Footer */
 footer {
   background-color: #212529;

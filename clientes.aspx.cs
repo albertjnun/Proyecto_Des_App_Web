@@ -12,8 +12,9 @@ namespace Proyecto_Des_App_Web
 {
     public partial class clientes : System.Web.UI.Page
     {
-        public List<string> nameList = new List<string>();
-        public List<string> phoneList = new List<string>();
+        private List<string> nameList = new List<string>();
+        private List<string> phoneList = new List<string>();
+        private List<int> idList = new List<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
             //Checar si usuario esta logeado para acceso
@@ -22,9 +23,7 @@ namespace Proyecto_Des_App_Web
                 Response.Redirect("login.aspx");
             }
 
-            string Nombre, Telefono;
-
-            string sql = @"SELECT Nombre, Telefono FROM Clientes ";
+            string sql = @"SELECT Nombre, Telefono, cliente_id FROM Clientes ";
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["default"].ToString()))
 
@@ -38,10 +37,9 @@ namespace Proyecto_Des_App_Web
                 while (dr.Read())
                 {
 
-                    Nombre = dr[0].ToString();
-                    nameList.Add(Nombre);
-                    Telefono = dr[1].ToString();
-                    phoneList.Add(Telefono);
+                    nameList.Add(dr.GetString(0));
+                    phoneList.Add(dr.GetString(1));
+                    idList.Add(dr.GetInt32(2));
 
                 }
 
@@ -60,11 +58,12 @@ namespace Proyecto_Des_App_Web
             while (index < nameList.Count)
             {
                 if (index == maxIndex) break;
-                tablaClientes.Append($"<tr><td>{nameList[index]}</td><td>{phoneList[index]}</td>");
-                tablaClientes.Append($"<td class=\"center-align\">\r\n<button>\r\n<img src=\"img/edit-icon.svg\" class=\"button-img-edit\"/>\r\n</button>\r\n</td>\r\n<td class=\"center-align\">\r\n<button>\r\n<img src=\"img/delete-icon.svg\" class=\"button-img-delete\" />\r\n</button>\r\n</td></tr>");
+                tablaClientes.Append($"<tr data-cliente-id=\"{idList[index]}\"><td class=\"table-row-element\">{nameList[index]}</td><td class=\"table-row-element\">{phoneList[index]}</td>");
+                tablaClientes.Append($"<td class=\"center-align\">\r\n<button>\r\n<img src=\"img/edit-icon.svg\" data-cliente-id=\"{idList[index]}\" class=\"button-img-edit\"/>\r\n</button>\r\n</td>\r\n<td class=\"center-align\">\r\n<button>\r\n<img src=\"img/delete-icon.svg\" class=\"button-img-delete\" />\r\n</button>\r\n</td></tr>");
                 index ++;
             }
             return tablaClientes.ToString();
         }
+
     }
 }
