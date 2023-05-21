@@ -163,6 +163,17 @@ nav .nav-right {
   background: none;
   border: none;
 }
+/* Dialog Modal */
+.edit-dialog {
+    border: 1px solid #b3b2b2;
+    border-radius: 5px 5px 5px 5px;
+}
+.edit-dialog h3{
+    text-align:center;
+}
+.edit-dialog::backdrop {
+    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+}
 /* Anchor */
 .anchor-add {
     text-align: center;

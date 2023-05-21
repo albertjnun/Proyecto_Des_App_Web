@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/navbar.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <title>Clientes</title>
   </head>
@@ -43,9 +44,9 @@
         <%= CreateClientesTable(0) %>
       </table>
       <a class="anchor-add">Añadir cliente</a>
-        <dialog id="vista-dialog">
-            <p>Vista cliente</p>
-            <table>
+        <dialog id="vista-dialog" class="edit-dialog">
+            <h3 class="dialog-header" >Vista cliente</h3>
+            <table class="dialog-table" >
               <tr>
                 <td>Nombre:</td>
                 <td>
