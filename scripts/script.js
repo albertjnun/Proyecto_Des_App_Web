@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 diagFecha.value = responseData.Fecha;
                 diagIdentificacion.value = responseData.Identificacion;
                 diagEstadoCivil.value = responseData.EstadoCivil;
-                
 
         }).catch(error => {
             console.log(error);

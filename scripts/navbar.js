@@ -2,7 +2,7 @@
     const navBtn = document.querySelector(".nav-button")
 
     const navBarStatus = function () {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth <= 768) {
             this.document.querySelectorAll(".nav-item").forEach(function (el) {
                 el.classList.add("hide");
             });
