@@ -96,7 +96,9 @@
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="registro.aspx" />
+    <Content Include="scripts\index.js" />
     <Content Include="scripts\login.js" />
+    <Content Include="scripts\navbar.js" />
     <Content Include="scripts\script.js" />
     <Content Include="styles\login.css" />
     <Content Include="styles\main.css" />
