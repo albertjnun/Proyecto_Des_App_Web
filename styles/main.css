@@ -178,6 +178,12 @@ nav .nav-right {
     border: none;
     border-bottom: 1px solid black;
 }
+.add-input{
+    width: 100%;
+}
+.add-input.fecha{
+    text-align: center;
+}
 /* Dialog botones*/
 .dialog-control {
     display: flex;

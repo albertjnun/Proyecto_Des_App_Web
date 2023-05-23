@@ -51,43 +51,43 @@
               <tr>
                 <td>Nombre:</td>
                 <td>
-                  <input id="dialog_nombre" type="text"  readonly/>
+                  <input class="add-input" id="dialog_nombre" type="text"  readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Teléfono:</td>
                 <td>
-                  <input id="dialog_telefono" type="text" readonly/>
+                  <input class="add-input" id="dialog_telefono" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Dirección:</td>
                 <td>
-                  <input id="dialog_direccion" type="text" readonly/>
+                  <input class="add-input" id="dialog_direccion" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Correo:</td>
                 <td>
-                  <input id="dialog_email" type="text" readonly/>
+                  <input class="add-input" id="dialog_email" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Fecha Nacimiento:</td>
                 <td>
-                  <input id="dialog_fecha" type="text" readonly/>
+                  <input class="add-input fecha" id="dialog_fecha" type="date" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>No. Identificación:</td>
                 <td>
-                  <input id="dialog_id" type="text" readonly/>
+                  <input class="add-input" id="dialog_id" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Estado Civil:</td>
                 <td>
-                  <input id="dialog_estado_civil" type="text" readonly/>
+                  <input class="add-input" id="dialog_estado_civil" type="text" readonly/>
                 </td>
               </tr>
             </table>
@@ -103,43 +103,43 @@
               <tr>
                 <td>Nombre:</td>
                 <td>
-                  <input id="dialog_nombre_crear" type="text"  />
+                  <input class="add-input" id="dialog_nombre_crear" type="text" name="nombre" />
                 </td>
               </tr>
               <tr>
                 <td>Teléfono:</td>
                 <td>
-                  <input id="dialog_telefono_crear" type="text" />
+                  <input class="add-input" id="dialog_telefono_crear" type="text" name="telefono" />
                 </td>
               </tr>
               <tr>
                 <td>Dirección:</td>
                 <td>
-                  <input id="dialog_direccion_crear" type="text" />
+                  <input class="add-input" id="dialog_direccion_crear" type="text" name="direccion"/>
                 </td>
               </tr>
               <tr>
                 <td>Correo:</td>
                 <td>
-                  <input id="dialog_email_crear" type="email" />
+                  <input class="add-input" id="dialog_email_crear" type="email" name="correo"/>
                 </td>
               </tr>
               <tr>
                 <td>Fecha Nacimiento:</td>
                 <td>
-                  <input id="dialog_fecha_crear" type="date" />
+                  <input class="add-input fecha" id="dialog_fecha_crear" type="date" name="fecha_nacimiento"/>
                 </td>
               </tr>
               <tr>
                 <td>No. Identificación:</td>
                 <td>
-                  <input id="dialog_id_crear" type="text" />
+                  <input class="add-input" id="dialog_id_crear" type="text" name="identificacion" />
                 </td>
               </tr>
               <tr>
                 <td>Estado Civil:</td>
                 <td>
-                  <input id="dialog_estado_civil_crear" type="text" />
+                  <input class="add-input" id="dialog_estado_civil_crear" type="text" name="estado_civil"/>
                 </td>
               </tr>
             </table>

@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const addBtn = document.querySelector(".btn-add");
     const dialogCrear = document.querySelector("#crear-dialog");
     const closeDialogCrear = document.querySelector("#close-crear-dialog-btn");
+    const saveDialogCrear = document.querySelector("#save-crear-dialog-btn");
+    const crearInputs = document.querySelectorAll(".add-input");
 
     //Variables para dialog EDITAR
     const editBtn = document.querySelectorAll(".button-img-edit");
@@ -23,21 +25,47 @@ document.addEventListener("DOMContentLoaded", function () {
     closeDialogCrear.addEventListener("click", () => {
         dialogCrear.close();
     })
+    saveDialogCrear.addEventListener("click", () => {
+        console.log("here");
+        let valid = crearInputValidation();
+        if (valid === true) {
+            console.log("True");
+            dialogCrear.close();
+            let obj = {};
+            crearInputs.forEach((input) => {
+                obj[input.name] = input.value;
+            });
+            console.log(obj);
+        }
+        else {
+            console.log("False");
+            alert("All inputs required");
+        }
+    })
+    const crearInputValidation = () => {
+        let valid = true;
+        crearInputs.forEach((input) => {
+            if (input.value === "" || input.value === undefined) {
+                valid = false;
+            }
+        })
+        return valid;
+    }
 
     //Funcionalidad para dialog EDITAR
-    closeDialogEdit.addEventListener("click", function () {
+    closeDialogEdit.addEventListener("click", () => {
         dialogEdit.close();
     });
-    editBtn.forEach(function (element) {
-        element.addEventListener("click", function () {
+    editBtn.forEach((element) => {
+        element.addEventListener("click", () => {
             let clientId = element.getAttribute("data-cliente-id");
             dialogEdit.showModal();
-            sendRequest(clientId)
+            getClientData(clientId);
         })
     })
     //Fetch para dialog EDITAR
-    const sendRequest = function (clientId) {
-        const bodyData = { clientId };
+    const getClientData = (clientId) => {
+        let bodyData = { clientId };
         fetch("getClientData.aspx", {
             method: "POST",
             headers: {
@@ -60,5 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(error);
             alert("Error");
         })
+    }
+    //Fetch para dialog CREAR
+    const addClientData = () => {
+
+        let bodyData = {};
     }
 });

@@ -40,7 +40,11 @@ namespace Proyecto_Des_App_Web
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             FetchRequestClientId data = serializer.Deserialize<FetchRequestClientId>(requestBody);
             ClientData sendClient = RetrieveFullClientData( data.ClientId);
-            string jsonData = JsonConvert.SerializeObject(sendClient);
+            string jsonData = JsonConvert.SerializeObject(sendClient, new JsonSerializerSettings
+            {
+                DateFormatString = "yyyy-MM-dd",
+                Formatting = Formatting.Indented,
+            });
             
             Response.ContentType = "application/json";
             Response.Write(jsonData);
@@ -62,7 +66,7 @@ namespace Proyecto_Des_App_Web
                     data.Direccion=dr.GetString(1);
                     data.Telefono=dr.GetString(2);
                     data.Email=dr.GetString(3);
-                    data.Fecha=dr.GetDateTime(4);
+                    data.Fecha = dr.GetDateTime(4);
                     data.Identificacion=dr.GetString(5);
                     if (dr.IsDBNull(6))
                     {

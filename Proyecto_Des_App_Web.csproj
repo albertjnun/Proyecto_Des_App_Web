@@ -96,6 +96,7 @@
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="registro.aspx" />
+    <Content Include="saveClientData.aspx" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\login.js" />
     <Content Include="scripts\navbar.js" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="saveClientData.aspx.cs">
+      <DependentUpon>saveClientData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="saveClientData.aspx.designer.cs">
+      <DependentUpon>saveClientData.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
