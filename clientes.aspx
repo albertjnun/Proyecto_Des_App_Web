@@ -46,18 +46,18 @@
       </table>
         <!-- Dialog box para vista de edicion de clientes -->
         <dialog id="vista-dialog" class="clientes-dialog">
-            <h3 class="dialog-header" >Vista cliente</h3>
+            <h3 class="dialog-header" >Editar cliente</h3>
             <table class="dialog-table" >
               <tr>
                 <td>Nombre:</td>
                 <td>
-                  <input class="edit-input" id="dialog_nombre" type="text"  readonly/>
+                  <input class="edit-input required" id="dialog_nombre_editar" type="text" name="nombre" />
                 </td>
               </tr>
               <tr>
                 <td>Apellido Paterno:</td>
                 <td>
-                  <input class="edit-input" id="dialog_apellido_paterno_editar" type="text" name="apellidoPaterno" />
+                  <input class="edit-input required" id="dialog_apellido_paterno_editar" type="text" name="apellidoPaterno" />
                 </td>
               </tr>
               <tr>
@@ -69,42 +69,43 @@
               <tr>
                 <td>Teléfono:</td>
                 <td>
-                  <input class="edit-input" id="dialog_telefono" type="text" readonly/>
+                  <input class="edit-input required" id="dialog_telefono_editar" type="text" name="telefono"/>
                 </td>
               </tr>
               <tr>
                 <td>Dirección:</td>
                 <td>
-                  <input class="edit-input" id="dialog_direccion" type="text" readonly/>
+                  <input class="edit-input required" id="dialog_direccion_editar" type="text" name="direccion"/>
                 </td>
               </tr>
               <tr>
                 <td>Correo:</td>
                 <td>
-                  <input class="edit-input" id="dialog_email" type="text" readonly/>
+                  <input class="edit-input required" id="dialog_email_editar" type="text" name="email"/>
                 </td>
               </tr>
               <tr>
                 <td>Fecha Nacimiento:</td>
                 <td>
-                  <input class="edit-input fecha" id="dialog_fecha" type="date" readonly/>
+                  <input class="edit-input fecha required" id="dialog_fecha_editar" type="date" name="fecha"/>
                 </td>
               </tr>
               <tr>
                 <td>No. Identificación:</td>
                 <td>
-                  <input class="edit-input" id="dialog_id" type="text" readonly/>
+                  <input class="edit-input required" id="dialog_id_editar" type="text" name="identificacion"/>
                 </td>
               </tr>
               <tr>
                 <td>Estado Civil:</td>
                 <td>
-                  <input class="edit-input" id="dialog_estado_civil" type="text" readonly/>
+                  <input class="edit-input" id="dialog_estado_civil_editar" type="text" name="estadoCivil"/>
                 </td>
               </tr>
             </table>
+            <input type="hidden" class="edit-input" id="edit_clientId" name="id"/>
             <div class="dialog-control">
-                <button class="btn-dialog" id="close-edit-dialog-btn">Cerrar</button>
+                <button class="btn-dialog" id="close-edit-dialog-btn">Cancelar</button>
                 <button class="btn-dialog" id="save-edit-dialog-btn">Guardar</button>
             </div>
         </dialog>
@@ -133,31 +134,31 @@
               <tr>
                 <td>Teléfono:</td>
                 <td>
-                  <input class="add-input required" id="dialog_telefono_crear" type="text" name="telefono" required/>
+                  <input class="add-input required" id="dialog_telefono_crear" type="text" name="telefono" />
                 </td>
               </tr>
               <tr>
                 <td>Dirección:</td>
                 <td>
-                  <input class="add-input required" id="dialog_direccion_crear" type="text" name="direccion" required/>
+                  <input class="add-input required" id="dialog_direccion_crear" type="text" name="direccion" />
                 </td>
               </tr>
               <tr>
                 <td>Correo:</td>
                 <td>
-                  <input class="add-input required" id="dialog_email_crear" type="email" name="email" required/>
+                  <input class="add-input required" id="dialog_email_crear" type="email" name="email" />
                 </td>
               </tr>
               <tr>
                 <td>Fecha Nacimiento:</td>
                 <td>
-                  <input class="add-input fecha required" id="dialog_fecha_crear" type="date" name="fecha" required/>
+                  <input class="add-input fecha required" id="dialog_fecha_crear" type="date" name="fecha" />
                 </td>
               </tr>
               <tr>
                 <td>No. Identificación:</td>
                 <td>
-                  <input class="add-input required" id="dialog_id_crear" type="text" name="identificacion" required/>
+                  <input class="add-input required" id="dialog_id_crear" type="text" name="identificacion" />
                 </td>
               </tr>
               <tr>
@@ -168,7 +169,7 @@
               </tr>
             </table>
             <div class="dialog-control">
-                <button class="btn-dialog" id="close-crear-dialog-btn">Cerrar</button>
+                <button class="btn-dialog" id="close-crear-dialog-btn">Cancelar</button>
                 <button class="btn-dialog" id="save-crear-dialog-btn">Guardar</button>
             </div>
         </dialog>

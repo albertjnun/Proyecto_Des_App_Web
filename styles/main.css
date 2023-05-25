@@ -178,10 +178,10 @@ nav .nav-right {
     border: none;
     border-bottom: 1px solid black;
 }
-.add-input{
+.add-input, .edit-input{
     width: 100%;
 }
-.add-input.fecha{
+.add-input.fecha, .edit-input.fecha {
     text-align: center;
 }
 /* Dialog botones*/

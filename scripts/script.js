@@ -5,21 +5,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeDialogCrear = document.querySelector("#close-crear-dialog-btn");
     const saveDialogCrear = document.querySelector("#save-crear-dialog-btn");
     const crearInputs = document.querySelectorAll(".add-input");
-    const crearInputsRequired = document.querySelectorAll(".required");
+    const crearInputsRequired = document.querySelectorAll(".add-input.required");
 
     //Variables para dialog EDITAR
     const editBtn = document.querySelectorAll(".button-img-edit");
     const dialogEdit = document.querySelector("#vista-dialog");
+    const editInputs = document.querySelectorAll(".edit-input");
+    const editInputsRequired = document.querySelectorAll(".edit-input.required")
     const closeDialogEdit = document.querySelector("#close-edit-dialog-btn");
-    const diagNombre = document.querySelector("#dialog_nombre");
+    const saveDialogEdit = document.querySelector("#save-edit-dialog-btn");
+    const diagNombre = document.querySelector("#dialog_nombre_editar");
     const diagApellidoPaterno = document.querySelector("#dialog_apellido_paterno_editar");
     const diagApellidoMaterno = document.querySelector("#dialog_apellido_materno_editar");
-    const diagTelefono = document.querySelector("#dialog_telefono");
-    const diagDireccion = document.querySelector("#dialog_direccion");
-    const diagEmail = document.querySelector("#dialog_email");
-    const diagFecha = document.querySelector("#dialog_fecha");
-    const diagIdentificacion = document.querySelector("#dialog_id");
-    const diagEstadoCivil = document.querySelector("#dialog_estado_civil");
+    const diagTelefono = document.querySelector("#dialog_telefono_editar");
+    const diagDireccion = document.querySelector("#dialog_direccion_editar");
+    const diagEmail = document.querySelector("#dialog_email_editar");
+    const diagFecha = document.querySelector("#dialog_fecha_editar");
+    const diagIdentificacion = document.querySelector("#dialog_id_editar");
+    const diagEstadoCivil = document.querySelector("#dialog_estado_civil_editar");
+    const diagClientId = document.querySelector("#edit_clientId")
 
     //Funcionalidad para dialog CREAR
     addBtn.addEventListener("click", () => {
@@ -29,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dialogCrear.close();
     })
     saveDialogCrear.addEventListener("click", () => {
-        let valid = crearInputValidation();
+        let valid = InputValidation(crearInputsRequired);
         if (valid === true) {
             let crearClienteData = {};
             crearInputs.forEach((input) => {
@@ -42,9 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("All inputs required");
         }
     })
-    const crearInputValidation = () => {
+
+    //Funcion Validar Inputs
+    const InputValidation = (inputs) => {
         let valid = true;
-        crearInputsRequired.forEach((input) => {
+        inputs.forEach((input) => {
             if (input.value === "" || input.value === undefined) {
                 valid = false;
             }
@@ -56,6 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
     closeDialogEdit.addEventListener("click", () => {
         dialogEdit.close();
     });
+    saveDialogEdit.addEventListener("click", () => {
+        let valid = InputValidation(editInputsRequired);
+        if (valid === true) {
+            let editClientData = {};
+            editInputs.forEach((input) => {
+                editClientData[input.name] = input.value;
+            })
+            updateClientData(editClientData);
+            dialogEdit.close();
+        }
+        else {
+            alert("All inputs required");
+        } 
+    })
     editBtn.forEach((element) => {
         element.addEventListener("click", () => {
             let clientId = element.getAttribute("data-cliente-id");
@@ -63,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
             getClientData(clientId);
         })
     })
-    //Fetch para dialog EDITAR
+
+    //Fetch para MOSTRAR dialog EDITAR
     const getClientData = (clientId) => {
         let bodyData = { clientId };
         fetch("getClientData.aspx", {
@@ -85,12 +106,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 diagFecha.value = responseData.Fecha;
                 diagIdentificacion.value = responseData.Identificacion;
                 diagEstadoCivil.value = responseData.EstadoCivil;
+                diagClientId.value = clientId;
 
         }).catch(error => {
             console.log(error);
             alert("Error");
         })
     }
+
+    //Fetch para GUARDAR dialog EDITAR
+    const updateClientData = (bodyData) => {
+        console.log(bodyData);
+        fetch("editClientData.aspx", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bodyData)
+        }).then(response => {
+            if (response.ok) {
+                alert("Datos guardados correctamente");
+            }
+            else {
+                alert("Error al guardar los datos");
+            }
+        }).catch(error => {
+            console.log(error);
+            alert("Error");
+        })
+    }
+
     //Fetch para dialog CREAR
     const sendClientData = (bodyData) => {
         console.log(bodyData);

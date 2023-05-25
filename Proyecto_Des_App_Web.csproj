@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="checarUsuario.aspx" />
     <Content Include="clientes.aspx" />
+    <Content Include="editClientData.aspx" />
     <Content Include="getClientData.aspx" />
     <Content Include="guardarUsuario.aspx" />
     <Content Include="index.aspx" />
@@ -119,6 +120,12 @@
     </Compile>
     <Compile Include="clientes.aspx.designer.cs">
       <DependentUpon>clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editClientData.aspx.cs">
+      <DependentUpon>editClientData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editClientData.aspx.designer.cs">
+      <DependentUpon>editClientData.aspx</DependentUpon>
     </Compile>
     <Compile Include="getClientData.aspx.cs">
       <DependentUpon>getClientData.aspx</DependentUpon>
