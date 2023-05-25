@@ -5,12 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeDialogCrear = document.querySelector("#close-crear-dialog-btn");
     const saveDialogCrear = document.querySelector("#save-crear-dialog-btn");
     const crearInputs = document.querySelectorAll(".add-input");
+    const crearInputsRequired = document.querySelectorAll(".required");
 
     //Variables para dialog EDITAR
     const editBtn = document.querySelectorAll(".button-img-edit");
     const dialogEdit = document.querySelector("#vista-dialog");
     const closeDialogEdit = document.querySelector("#close-edit-dialog-btn");
     const diagNombre = document.querySelector("#dialog_nombre");
+    const diagApellidoPaterno = document.querySelector("#dialog_apellido_paterno_editar");
+    const diagApellidoMaterno = document.querySelector("#dialog_apellido_materno_editar");
     const diagTelefono = document.querySelector("#dialog_telefono");
     const diagDireccion = document.querySelector("#dialog_direccion");
     const diagEmail = document.querySelector("#dialog_email");
@@ -26,25 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         dialogCrear.close();
     })
     saveDialogCrear.addEventListener("click", () => {
-        console.log("here");
         let valid = crearInputValidation();
         if (valid === true) {
-            console.log("True");
-            dialogCrear.close();
-            let obj = {};
+            let crearClienteData = {};
             crearInputs.forEach((input) => {
-                obj[input.name] = input.value;
+                crearClienteData[input.name] = input.value;
             });
-            console.log(obj);
+            sendClientData(crearClienteData);
+            dialogCrear.close();
         }
         else {
-            console.log("False");
             alert("All inputs required");
         }
     })
     const crearInputValidation = () => {
         let valid = true;
-        crearInputs.forEach((input) => {
+        crearInputsRequired.forEach((input) => {
             if (input.value === "" || input.value === undefined) {
                 valid = false;
             }
@@ -77,6 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(responseData => {
                 console.log(responseData);
                 diagNombre.value = responseData.Nombre;
+                diagApellidoPaterno.value = responseData.ApellidoPaterno;
+                diagApellidoMaterno.value = responseData.ApellidoMaterno;
                 diagTelefono.value = responseData.Telefono;
                 diagDireccion.value = responseData.Direccion;
                 diagEmail.value = responseData.Email;
@@ -90,8 +92,24 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
     //Fetch para dialog CREAR
-    const addClientData = () => {
-
-        let bodyData = {};
+    const sendClientData = (bodyData) => {
+        console.log(bodyData);
+        fetch("saveClientData.aspx", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bodyData)
+        }).then(response => {
+            if (response.ok) {
+                alert("Datos guardados correctamente");
+            }
+            else {
+                alert("Error al guardar los datos");
+            }
+        }).catch(error => {
+            console.log(error);
+            alert("Error");
+        })
     }
 });

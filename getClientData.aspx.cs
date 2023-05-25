@@ -16,6 +16,8 @@ namespace Proyecto_Des_App_Web
     public class ClientData
     {
         public string Nombre { get; set; }
+        public string ApellidoPaterno { get; set; }
+        public string ApellidoMaterno { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string Email { get; set; }
@@ -27,11 +29,6 @@ namespace Proyecto_Des_App_Web
     {
         public int ClientId { get; set; }
     }
-    //diagDireccion = responseData.nombre;
-    //            diagEmail = responseData.nombre;
-    //            diagFecha = responseData.nombre;
-    //            diagIdentificacion = responseData.nombre;
-    //            diagEstadoCivil = responseData.nombre;
     public partial class getClientData : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -53,7 +50,7 @@ namespace Proyecto_Des_App_Web
         public ClientData RetrieveFullClientData(int cliente_id)
         {
             ClientData data = new ClientData();
-            string sqlFull = @"SELECT Nombre, Direccion, Telefono, Correo, Fecha_nacimiento, Identificacion, Estado_civil FROM Clientes WHERE cliente_id = @cliente_id";
+            string sqlFull = @"SELECT Nombre, Apellido_paterno, Apellido_materno, Direccion, Telefono, Correo, Fecha_nacimiento, Identificacion, Estado_civil FROM Clientes WHERE cliente_id = @cliente_id";
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["default"].ToString()))
             {
                 conn.Open();
@@ -63,18 +60,27 @@ namespace Proyecto_Des_App_Web
                 if (dr.Read())
                 {
                     data.Nombre=dr.GetString(0);
-                    data.Direccion=dr.GetString(1);
-                    data.Telefono=dr.GetString(2);
-                    data.Email=dr.GetString(3);
-                    data.Fecha = dr.GetDateTime(4);
-                    data.Identificacion=dr.GetString(5);
-                    if (dr.IsDBNull(6))
+                    data.ApellidoPaterno = dr.GetString(1);
+                    if (dr.IsDBNull(2))
+                    {
+                        data.ApellidoMaterno = "";
+                    }
+                    else
+                    {
+                        data.ApellidoMaterno = dr.GetString(2);
+                    }
+                    data.Direccion=dr.GetString(3);
+                    data.Telefono=dr.GetString(4);
+                    data.Email=dr.GetString(5);
+                    data.Fecha = dr.GetDateTime(6);
+                    data.Identificacion=dr.GetString(7);
+                    if (dr.IsDBNull(8))
                     {
                         data.EstadoCivil = "";
                     }
                     else
                     {
-                        data.EstadoCivil = dr.GetString(6);
+                        data.EstadoCivil = dr.GetString(8);
                     }
                     
                 }

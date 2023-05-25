@@ -51,43 +51,55 @@
               <tr>
                 <td>Nombre:</td>
                 <td>
-                  <input class="add-input" id="dialog_nombre" type="text"  readonly/>
+                  <input class="edit-input" id="dialog_nombre" type="text"  readonly/>
+                </td>
+              </tr>
+              <tr>
+                <td>Apellido Paterno:</td>
+                <td>
+                  <input class="edit-input" id="dialog_apellido_paterno_editar" type="text" name="apellidoPaterno" />
+                </td>
+              </tr>
+              <tr>
+                <td>Apellido Materno:</td>
+                <td>
+                  <input class="edit-input" id="dialog_apellido_materno_editar" type="text" name="apellidoMaterno" />
                 </td>
               </tr>
               <tr>
                 <td>Teléfono:</td>
                 <td>
-                  <input class="add-input" id="dialog_telefono" type="text" readonly/>
+                  <input class="edit-input" id="dialog_telefono" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Dirección:</td>
                 <td>
-                  <input class="add-input" id="dialog_direccion" type="text" readonly/>
+                  <input class="edit-input" id="dialog_direccion" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Correo:</td>
                 <td>
-                  <input class="add-input" id="dialog_email" type="text" readonly/>
+                  <input class="edit-input" id="dialog_email" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Fecha Nacimiento:</td>
                 <td>
-                  <input class="add-input fecha" id="dialog_fecha" type="date" readonly/>
+                  <input class="edit-input fecha" id="dialog_fecha" type="date" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>No. Identificación:</td>
                 <td>
-                  <input class="add-input" id="dialog_id" type="text" readonly/>
+                  <input class="edit-input" id="dialog_id" type="text" readonly/>
                 </td>
               </tr>
               <tr>
                 <td>Estado Civil:</td>
                 <td>
-                  <input class="add-input" id="dialog_estado_civil" type="text" readonly/>
+                  <input class="edit-input" id="dialog_estado_civil" type="text" readonly/>
                 </td>
               </tr>
             </table>
@@ -103,43 +115,55 @@
               <tr>
                 <td>Nombre:</td>
                 <td>
-                  <input class="add-input" id="dialog_nombre_crear" type="text" name="nombre" />
+                  <input class="add-input required" id="dialog_nombre_crear" type="text" name="nombre" />
+                </td>
+              </tr>
+              <tr>
+                <td>Apellido Paterno:</td>
+                <td>
+                  <input class="add-input required" id="dialog_apellido_paterno_crear" type="text" name="apellidoPaterno" />
+                </td>
+              </tr>
+              <tr>
+                <td>Apellido Materno:</td>
+                <td>
+                  <input class="add-input" id="dialog_apellido_materno_crear" type="text" name="apellidoMaterno" />
                 </td>
               </tr>
               <tr>
                 <td>Teléfono:</td>
                 <td>
-                  <input class="add-input" id="dialog_telefono_crear" type="text" name="telefono" />
+                  <input class="add-input required" id="dialog_telefono_crear" type="text" name="telefono" required/>
                 </td>
               </tr>
               <tr>
                 <td>Dirección:</td>
                 <td>
-                  <input class="add-input" id="dialog_direccion_crear" type="text" name="direccion"/>
+                  <input class="add-input required" id="dialog_direccion_crear" type="text" name="direccion" required/>
                 </td>
               </tr>
               <tr>
                 <td>Correo:</td>
                 <td>
-                  <input class="add-input" id="dialog_email_crear" type="email" name="correo"/>
+                  <input class="add-input required" id="dialog_email_crear" type="email" name="email" required/>
                 </td>
               </tr>
               <tr>
                 <td>Fecha Nacimiento:</td>
                 <td>
-                  <input class="add-input fecha" id="dialog_fecha_crear" type="date" name="fecha_nacimiento"/>
+                  <input class="add-input fecha required" id="dialog_fecha_crear" type="date" name="fecha" required/>
                 </td>
               </tr>
               <tr>
                 <td>No. Identificación:</td>
                 <td>
-                  <input class="add-input" id="dialog_id_crear" type="text" name="identificacion" />
+                  <input class="add-input required" id="dialog_id_crear" type="text" name="identificacion" required/>
                 </td>
               </tr>
               <tr>
                 <td>Estado Civil:</td>
                 <td>
-                  <input class="add-input" id="dialog_estado_civil_crear" type="text" name="estado_civil"/>
+                  <input class="add-input" id="dialog_estado_civil_crear" type="text" name="estadoCivil"/>
                 </td>
               </tr>
             </table>
