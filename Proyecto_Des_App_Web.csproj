@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="checarUsuario.aspx" />
+    <Content Include="clientDataTable.aspx" />
     <Content Include="clientes.aspx" />
     <Content Include="editClientData.aspx" />
     <Content Include="getClientData.aspx" />
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="checarUsuario.aspx.designer.cs">
       <DependentUpon>checarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clientDataTable.aspx.cs">
+      <DependentUpon>clientDataTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clientDataTable.aspx.designer.cs">
+      <DependentUpon>clientDataTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="clientes.aspx.cs">
       <DependentUpon>clientes.aspx</DependentUpon>

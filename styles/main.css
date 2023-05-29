@@ -149,78 +149,98 @@ nav .nav-right {
 .full-table {
   width: 100%;
   border-collapse: collapse;
+}
+.full-table .center-align {
   text-align: center;
 }
-
 .full-table th,
 .full-table td {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #b3b2b2;
 }
-
+.full-table th.left-align,
+.full-table td.left-align {
+  padding-left: 5rem;
+  text-align: left;
+}
 .full-table button {
   background: none;
   border: none;
 }
 /* Dialog Modal*/
 .clientes-dialog {
-    border: 1px solid #b3b2b2;
-    border-radius: 5px 5px 5px 5px;
+  border: 1px solid #b3b2b2;
+  border-radius: 5px 5px 5px 5px;
 }
 .clientes-dialog h3 {
-    text-align: center;
+  text-align: center;
 }
 .clientes-dialog::backdrop {
-    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
 }
 .clientes-dialog input {
-    border: none;
-    border-bottom: 1px solid black;
+  border: none;
+  border-bottom: 1px solid black;
 }
-.add-input, .edit-input{
-    width: 100%;
+.add-input,
+.edit-input {
+  width: 100%;
 }
-.add-input.fecha, .edit-input.fecha {
-    text-align: center;
+.add-input.fecha,
+.edit-input.fecha {
+  text-align: center;
+}
+/* Dialog borrar */
+.borrar-dialog-message {
+  padding: 1em;
+  border: 2px solid #cc0000;
+  border-radius: 10px;
+  background-color: #ff4444;
+  color: white;
+  text-align: center;
 }
 /* Dialog botones*/
 .dialog-control {
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
 }
 .btn-dialog {
-    color: #dfdedf;
-    display: inline;
-    margin: 5px;
-    background: #303437;
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
-    width: 30%;
+  color: #dfdedf;
+  display: inline;
+  margin: 5px;
+  background: #303437;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  width: 30%;
+}
+.btn-dialog:hover {
+  color: #f5f5f5;
+  background: #17191b;
 }
 /* Boton */
 .btn-add {
-    text-align: center;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    color: #dfdedf;
-    background: #303437;
-    border-radius: 5px;
-    border: none;
-    padding: 8px 30px;
-    font-size: medium;
-    margin-bottom: 1em;
-    touch-action: manipulation;
-    -webkit-user-select: none;
-    user-select: none;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  color: #dfdedf;
+  background: #303437;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 30px;
+  font-size: medium;
+  margin-bottom: 1em;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
-    .btn-add:hover {
-        color: #f5f5f5;
-        background: #17191b;
-    }
+.btn-add:hover {
+  color: #f5f5f5;
+  background: #17191b;
+}
 
 /* Footer */
 footer {
@@ -317,6 +337,13 @@ footer {
     gap: 10px;
     padding: 10px;
   }
+
+  .full-table th.left-align,
+  .full-table td.left-align {
+    padding-left: 0;
+    text-align: left;
+  }
+
   /* Footer */
   footer {
     position: relative;

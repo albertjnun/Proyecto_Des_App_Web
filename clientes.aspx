@@ -36,13 +36,14 @@
       <h1 class="main-head">Clientes</h1>
         <button class="btn-add" >Agregar cliente</button>
       <table class="full-table">
-        <tr class="table-header-row">
-          <th>Nombre</th>
-          <th>Teléfono</th>
-          <th class="center-align">Modificar</th>
-          <th class="center-align">Eliminar</th>
-        </tr>
-        <%= CreateClientesTable(0) %>
+          <thead>
+            <tr class="table-header-row">
+              <th class="left-align">Nombre</th>
+              <th class="center-align">Modificar</th>
+              <th class="center-align">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody class="full-table-body"></tbody>
       </table>
         <!-- Dialog box para vista de edicion de clientes -->
         <dialog id="vista-dialog" class="clientes-dialog">
@@ -109,7 +110,7 @@
                 <button class="btn-dialog" id="save-edit-dialog-btn">Guardar</button>
             </div>
         </dialog>
-            <!-- Dialog box para vista de creacion de clientes -->
+        <!-- Dialog box para vista de creacion de clientes -->
         <dialog id="crear-dialog" class="clientes-dialog">
             <h3 class="dialog-header" >Crear cliente</h3>
             <table class="dialog-table" >
@@ -171,6 +172,16 @@
             <div class="dialog-control">
                 <button class="btn-dialog" id="close-crear-dialog-btn">Cancelar</button>
                 <button class="btn-dialog" id="save-crear-dialog-btn">Guardar</button>
+            </div>
+        </dialog>
+        <!-- Dialog box para vista de borrar clientes -->
+        <dialog id="borrar-dialog" class="clientes-dialog">
+            <p class="borrar-dialog-message">
+                &#9888 ¿Está seguro de que desea eliminar al cliente: <span id="borrar-dialog-cliente"></span>?
+            </p>
+            <div class="dialog-control">
+                <button class="btn-dialog" id="close-borrar-dialog-btn">Cancelar</button>
+                <button class="btn-dialog" id="borrar-borrar-dialog-btn">Borrar</button>
             </div>
         </dialog>
     </main>
