@@ -179,6 +179,7 @@
             <p class="borrar-dialog-message">
                 &#9888 ¿Está seguro de que desea eliminar al cliente: <span id="borrar-dialog-cliente"></span>?
             </p>
+            <input type="hidden" id="borrar_clientId"/>
             <div class="dialog-control">
                 <button class="btn-dialog" id="close-borrar-dialog-btn">Cancelar</button>
                 <button class="btn-dialog" id="borrar-borrar-dialog-btn">Borrar</button>

@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "#borrar-borrar-dialog-btn"
   );
   const clienteBorrar = document.querySelector("#borrar-dialog-cliente");
+  const borrarDialogClientId = document.querySelector("#borrar_clientId");
 
   const createClientTable = async () => {
     tableClientes.innerHTML = "";
@@ -94,16 +95,21 @@ document.addEventListener("DOMContentLoaded", function () {
   closeDialogCrear.addEventListener("click", () => {
     dialogCrear.close();
   });
-  saveDialogCrear.addEventListener("click", () => {
+  saveDialogCrear.addEventListener("click", async () => {
     let valid = InputValidation(crearInputsRequired);
     if (valid === true) {
       let crearClienteData = {};
       crearInputs.forEach((input) => {
         crearClienteData[input.name] = input.value;
       });
-      sendClientData(crearClienteData);
-      createClientTable();
-      dialogCrear.close();
+      try {
+        await sendClientData(crearClienteData);
+        await createClientTable();
+        dialogCrear.close();
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error:", error);
+      }
     } else {
       alert("All inputs required");
     }
@@ -125,16 +131,21 @@ document.addEventListener("DOMContentLoaded", function () {
   closeDialogEdit.addEventListener("click", () => {
     dialogEdit.close();
   });
-  saveDialogEdit.addEventListener("click", () => {
+  saveDialogEdit.addEventListener("click", async () => {
     let valid = InputValidation(editInputsRequired);
     if (valid === true) {
       let editClientData = {};
       editInputs.forEach((input) => {
         editClientData[input.name] = input.value;
       });
-      updateClientData(editClientData);
-      createClientTable();
-      dialogEdit.close();
+      try {
+        await updateClientData(editClientData);
+        await createClientTable();
+        dialogEdit.close();
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error:", error);
+      }
     } else {
       alert("All inputs required");
     }
@@ -155,6 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
         client.ApellidoPaterno +
         " " +
         client.ApellidoMaterno;
+      borrarDialogClientId.value = clientId;
+      createClientTable();
       dialogBorrar.showModal();
     }
   });
@@ -162,6 +175,16 @@ document.addEventListener("DOMContentLoaded", function () {
   //Funcionalidad para dialog BORRAR
   closeDialogBorrar.addEventListener("click", () => {
     dialogBorrar.close();
+  });
+  borrarDialogBorrar.addEventListener("click", async () => {
+    try {
+      await borrarClientData(borrarDialogClientId.value);
+      await createClientTable();
+      dialogBorrar.close();
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error:", error);
+    }
   });
 
   //Funcion para MOSTRAR dialog EDITAR
@@ -222,11 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
   //Fetch para BORRAR dialog BORRAR
   const borrarClientData = (clientId) => {
     fetch("deleteClientData.aspx", {
-      method: "DELETE",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ cliente_id: clientId }),
+      body: JSON.stringify({ ClientId: clientId }),
     })
       .then((response) => {
         if (!response.ok) {

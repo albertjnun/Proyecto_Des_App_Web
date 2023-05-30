@@ -92,6 +92,7 @@
     <Content Include="checarUsuario.aspx" />
     <Content Include="clientDataTable.aspx" />
     <Content Include="clientes.aspx" />
+    <Content Include="deleteClientData.aspx" />
     <Content Include="editClientData.aspx" />
     <Content Include="getClientData.aspx" />
     <Content Include="guardarUsuario.aspx" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="clientes.aspx.designer.cs">
       <DependentUpon>clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deleteClientData.aspx.cs">
+      <DependentUpon>deleteClientData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteClientData.aspx.designer.cs">
+      <DependentUpon>deleteClientData.aspx</DependentUpon>
     </Compile>
     <Compile Include="editClientData.aspx.cs">
       <DependentUpon>editClientData.aspx</DependentUpon>
