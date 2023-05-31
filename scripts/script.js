@@ -203,62 +203,59 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   //Fetch para GUARDAR dialog EDITAR
-  const updateClientData = (bodyData) => {
-    fetch("editClientData.aspx", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(bodyData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          alert("Error al guardar los datos");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Error");
+  const updateClientData = async (bodyData) => {
+    try {
+      const response = await fetch("editClientData.aspx", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodyData),
       });
+      if (!response.ok) {
+        throw new Error("Request failed with status: " + response.status);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error:", error);
+    }
   };
 
   //Fetch para CREAR dialog CREAR
-  const sendClientData = (bodyData) => {
-    fetch("saveClientData.aspx", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(bodyData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          alert("Error al guardar los datos");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Error");
+  const sendClientData = async (bodyData) => {
+    try {
+      const response = await fetch("saveClientData.aspx", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodyData),
       });
+      if (!response.ok) {
+        throw new Error("Request failed with status: " + response.status);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error:", error);
+    }
   };
 
   //Fetch para BORRAR dialog BORRAR
-  const borrarClientData = (clientId) => {
-    fetch("deleteClientData.aspx", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ClientId: clientId }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          alert("Error al borrar los datos");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Error");
+  const borrarClientData = async (clientId) => {
+    try {
+      const response = await fetch("deleteClientData.aspx", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ClientId: clientId }),
       });
+      if (!response.ok) {
+        throw new Error("Request failed with status: " + response.status);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error:", error);
+    }
   };
 });
