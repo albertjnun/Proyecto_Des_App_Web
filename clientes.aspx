@@ -19,7 +19,7 @@
           </li>
           <li class="nav-item hide"><a href="clientes.aspx">Clientes</a></li>
           <li class="nav-item hide"><a href="#">Expedientes</a></li>
-          <li class="nav-item nav-right hide"><a href="#">Cuenta</a></li>
+          <li class="nav-item nav-right hide" ><a id="nav-element-cuenta">Cuenta</a></li>
           <li class="nav-button">
             <button class="burger-button">
               <img
@@ -30,6 +30,9 @@
           </li>
           <!-- <li class="icon"><img src="img/login_pic.png" width="10" /></li> -->
         </ul>
+          <div class="dropdown-content">
+            <a href="logout.aspx">Cerrar sesión</a>
+        </div>
       </nav>
     </header>
     <main>
