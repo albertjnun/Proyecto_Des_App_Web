@@ -18,7 +18,7 @@
             <a href="index.aspx">Dashboard</a>
           </li>
           <li class="nav-item hide"><a href="clientes.aspx">Clientes</a></li>
-          <li class="nav-item hide"><a href="#">Expedientes</a></li>
+          <li class="nav-item hide"><a href="casos.aspx">Casos</a></li>
           <li class="nav-item nav-right hide" ><a id="nav-element-cuenta">Cuenta</a></li>
           <li class="nav-button">
             <button class="burger-button">

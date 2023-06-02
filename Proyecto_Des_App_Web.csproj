@@ -89,6 +89,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="casos.aspx" />
+    <Content Include="casosDataTable.aspx" />
     <Content Include="checarUsuario.aspx" />
     <Content Include="clientDataTable.aspx" />
     <Content Include="clientes.aspx" />
@@ -110,6 +112,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="casos.aspx.cs">
+      <DependentUpon>casos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="casos.aspx.designer.cs">
+      <DependentUpon>casos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="casosDataTable.aspx.cs">
+      <DependentUpon>casosDataTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="casosDataTable.aspx.designer.cs">
+      <DependentUpon>casosDataTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="checarUsuario.aspx.cs">
       <DependentUpon>checarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
